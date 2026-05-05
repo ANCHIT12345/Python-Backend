@@ -1,0 +1,10 @@
+2026-05-05 18:26:02,776 - task_api - ERROR - Task with id 0 not found
+2026-05-05 18:26:02,778 - task_api - ERROR - Task not found: Task not found
+2026-05-05 18:26:27,128 - task_api - ERROR - Task with id 0 not found
+2026-05-05 18:26:27,129 - task_api - ERROR - Task not found: Task not found
+2026-05-05 18:26:27,746 - task_api - ERROR - Task with id 0 not found
+2026-05-05 18:26:27,747 - task_api - ERROR - Task not found: Task not found
+2026-05-05 18:26:31,538 - task_api - ERROR - Task with id 1 not found
+2026-05-05 18:26:31,539 - task_api - ERROR - Task not found: Task not found
+2026-05-05 18:26:56,421 - task_api - ERROR - Task with id 1 not found for deletion
+2026-05-05 18:26:56,422 - task_api - ERROR - Task not found: Task not found
