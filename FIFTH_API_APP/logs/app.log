@@ -8,3 +8,5 @@
 2026-05-05 18:26:31,539 - task_api - ERROR - Task not found: Task not found
 2026-05-05 18:26:56,421 - task_api - ERROR - Task with id 1 not found for deletion
 2026-05-05 18:26:56,422 - task_api - ERROR - Task not found: Task not found
+2026-05-06 12:07:16,768 - task_api - ERROR - Task with id 1 not found
+2026-05-06 12:07:16,769 - task_api - ERROR - Task not found: Task not found
