@@ -1,48 +1,63 @@
-from pydantic import BaseModel
+from pydantic import BaseModel # pyright: ignore[reportMissingImports]
 from datetime import datetime
 
+
+
 class PatientBase(BaseModel):
-    name: str
+
+    patient_name: str
     age: int
     mobile: str
-    
+
+
 class PatientCreate(PatientBase):
     pass
 
+
 class PatientResponse(PatientBase):
-    id: int
-    
+
+    patient_id: int
+
     class Config:
-        from_attribute = True
+        from_attributes = True
+
+
+
 
 class DoctorBase(BaseModel):
-    name: str
+
+    doctor_name: str
     specialization: str
-    
+
+
 class DoctorCreate(DoctorBase):
     pass
 
 
 class DoctorResponse(DoctorBase):
-    id: int
-    
+
+    doctor_id: int
+
     class Config:
-        from_attribute = True
+        from_attributes = True
+
+
 
 
 class AppointmentBase(BaseModel):
+
     patient_id: int
     doctor_id: int
     appointment_date: datetime
-    
-    
+
+
 class AppointmentCreate(AppointmentBase):
     pass
 
+
 class AppointmentResponse(AppointmentBase):
-    id: int
-    
+
+    appointment_id: int
+
     class Config:
-        from_attribute = True
-        
-        
+        from_attributes = True

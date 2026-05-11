@@ -1,7 +1,12 @@
-from sqlalchemy import create_engine  # type: ignore[import-not-found]
-from sqlalchemy.orm import sessionmaker, declarative_base  # type: ignore[import-not-found]
+# pyright: reportMissingImports=false
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, declarative_base
 
-DATABASE_URL = ("mssql+pyodbc://username:password@localhost/HospitalManagementSystem?driver=ODBC+Driver+17+for+SQL+Server")
+DATABASE_URL = (
+    "mssql+pyodbc://@LAPTOP-TH0TP9P1\\SQLEXPRESS/HospitalManagementSystem"
+    "?driver=ODBC+Driver+17+for+SQL+Server"
+    "&trusted_connection=yes"
+)
 
 engine = create_engine(DATABASE_URL)
 
@@ -9,13 +14,17 @@ SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
     bind=engine
-)   
+)
 
 Base = declarative_base()
 
+
 def get_db():
+
     db = SessionLocal()
+
     try:
         yield db
+
     finally:
         db.close()
