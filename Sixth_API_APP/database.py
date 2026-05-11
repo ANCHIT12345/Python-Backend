@@ -1,8 +1,7 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import declarative_base
+from sqlalchemy import create_engine  # type: ignore[import-not-found]
+from sqlalchemy.orm import sessionmaker, declarative_base  # type: ignore[import-not-found]
 
-DATABASE_URL = ("mssql+pyodbc://username:password@localhost/hospital_db?driver=ODBC+Driver+17+for+SQL+Server")
+DATABASE_URL = ("mssql+pyodbc://username:password@localhost/HospitalManagementSystem?driver=ODBC+Driver+17+for+SQL+Server")
 
 engine = create_engine(DATABASE_URL)
 
@@ -14,3 +13,9 @@ SessionLocal = sessionmaker(
 
 Base = declarative_base()
 
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

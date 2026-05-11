@@ -1,27 +1,48 @@
 from pydantic import BaseModel
+from datetime import datetime
 
-class Patients(BaseModel):
-    patient_id: int
-    patient_name: str
+class PatientBase(BaseModel):
+    name: str
     age: int
     mobile: str
+    
+class PatientCreate(PatientBase):
+    pass
 
+class PatientResponse(PatientBase):
+    id: int
+    
     class Config:
-        from_attributes = True
-        
-class Doctors(BaseModel):
-    doctor_id: int
-    doctor_name: str
+        from_attribute = True
+
+class DoctorBase(BaseModel):
+    name: str
     specialization: str
+    
+class DoctorCreate(DoctorBase):
+    pass
 
+
+class DoctorResponse(DoctorBase):
+    id: int
+    
     class Config:
-        from_attributes = True
-        
-class Appointments(BaseModel):
-    appointment_id: int
+        from_attribute = True
+
+
+class AppointmentBase(BaseModel):
     patient_id: int
     doctor_id: int
-    appointment_date: str
+    appointment_date: datetime
+    
+    
+class AppointmentCreate(AppointmentBase):
+    pass
 
+class AppointmentResponse(AppointmentBase):
+    id: int
+    
     class Config:
-        from_attributes = True
+        from_attribute = True
+        
+        
