@@ -1,0 +1,2 @@
+APP_NAME = "Secure API"
+APP_VERSION = "1.0"
